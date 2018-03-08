@@ -28,9 +28,8 @@ var moment = require('moment');
 		  unix: moment(momentTime).unix(),
 		  natural: moment(momentTime).format("MMMM D, YYYY")
 	  }
-	  	  console.log(output);
 	  
-	  //res.write(myMoment);
+	  res.write(JSON.stringify(output));
       res.end();
 	}
   }).listen(8080);
