@@ -1,40 +1,37 @@
 var http = require('http');
 var moment = require('moment');
 
-http.createServer(function(req, res){
-	
+  http.createServer(function(req, res){
+    //escape unnecessary response call
 	if(req.url != '/favicon.ico'){
 	
 	  res.writeHead(200, {'Content-Type': 'text/plain'});
-	  //decode the given url that represents a date 
+	  //decode the given url that gives a date 
 	  var givenTime = decodeURI(req.url);
-	  //set the regular expression to be used
+	  
 	  var firstRegex = /time/;
 	  var secondRegex = /time/;
+	  
 	  //tests if the date is a unix timestamp or a natural language form of date
-	  var firstTest = firstRegex.test(givenTime);
-	  var secondTest = secondRegex.test(givenTime);
-	  var myMoment = {};
+	  var isNaturalTime = firstRegex.test(givenTime);
+	  var isUnixTime = secondRegex.test(givenTime);
+	  var momentTime = {};
 	  
 	  //coverts the given date to a moment format
-	  if(firstTest){
-        myMoment = moment(givenTime, "MMMM D, YYYY").format();;  
-	  }
-	  else if(secondTest){
-	    myMoment = moment.unix(givenTime);
-	  }
-	  else console.log("Err"); 
-	  
+	  if(isNaturalTime){
+        momentTime = moment(givenTime, "MMMM D, YYYY").format();;  
+	  }else if(isUnixTime){
+	    momentTime = moment.unix(givenTime);
+	  }else console.log("Err"); 
 	  
 	  var output = {
-		  unix: moment(myMoment).unix(),
-		  natural: moment(myMoment).format("MMMM D, YYYY")
+		  unix: moment(momentTime).unix(),
+		  natural: moment(momentTime).format("MMMM D, YYYY")
 	  }
 	  	  console.log(output);
 	  
 	  //res.write(myMoment);
       res.end();
 	}
-	
-}).listen(8080);
+  }).listen(8080);
 	
