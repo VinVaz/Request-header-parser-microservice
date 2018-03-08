@@ -8,22 +8,24 @@ http.createServer(function(req, res){
 	  res.writeHead(200, {'Content-Type': 'text/plain'});
 	  //decode the given url that represents a date 
 	  var givenTime = decodeURI(req.url);
-	  var firstFilter = /time/;
-	  var secondFilter = /time/;
-	  var firstTest = firstFilter.test(givenTime);
-	  var secondTest = secondFilter.test(givenTime);
+	  //set the regular expression to be used
+	  var firstRegex = /time/;
+	  var secondRegex = /time/;
+	  //tests if the date is a unix timestamp or a natural language form of date
+	  var firstTest = firstRegex.test(givenTime);
+	  var secondTest = secondRegex.test(givenTime);
 	  var myMoment = {};
 	  
-	  //check if the date is either a unix timestamp or 
-	  //a natural language form of date and then
-	  //changes the received date and covert to a moment format
+	  //coverts the given date to a moment format
 	  if(firstTest){
         myMoment = moment(givenTime, "MMMM D, YYYY").format();;  
-	  }else if(secondTest){
-	    myMoment = moment.unix('1450137600');
-	  }else console.log("Err"); 
+	  }
+	  else if(secondTest){
+	    myMoment = moment.unix(givenTime);
+	  }
+	  else console.log("Err"); 
 	  
-	
+	  
 	  var output = {
 		  unix: moment(myMoment).unix(),
 		  natural: moment(myMoment).format("MMMM D, YYYY")
