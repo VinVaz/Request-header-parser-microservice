@@ -1,0 +1,25 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "hello I'm readme",
+  "main": "TimestampMicroservice.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinVaz/Timestamp-microservice.git"
+  },
+  "keywords": [
+    "\u001b[B\u001b[B[]\u001b"
+  ],
+  "author": "Vinícius Vaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VinVaz/Timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/VinVaz/Timestamp-microservice#readme",
+  "dependencies": {
+    "moment": "^2.21.0"
+  }
+}
