@@ -8,9 +8,10 @@ var moment = require('moment');
 	  res.writeHead(200, {'Content-Type': 'text/plain'});
 	  //decode the given url that gives a date 
 	  var givenTime = decodeURI(req.url);
+	  givenTime = givenTime.slice(1);
 	  
-	  var firstRegex = /^[/][A-Za-z]{1,10}\s\d{1,2}[,]\s\d{4}/;
-	  var secondRegex = /^[/]\d+$/;
+	  var firstRegex = /^[A-Za-z]{1,10}\s\d{1,2}[,]\s\d{4}/;
+	  var secondRegex = /^\d+$/;
 	  
 	  //tests if the date is a unix timestamp or a natural language form of date
 	  var isNaturalTime = firstRegex.test(givenTime);
