@@ -1,6 +1,4 @@
-<!-- empty line -->
-
-###Timestamp Microservice
+>###Timestamp Microservice
 ----------------------------------------
 >
 >*content:
