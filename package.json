@@ -12,6 +12,7 @@
   },
   "keywords": [
     "\u001b[B\u001b[B[]\u001b"
+	"heroku"
   ],
   "author": "Vinícius Vaz",
   "license": "ISC",
@@ -19,6 +20,9 @@
     "url": "https://github.com/VinVaz/Timestamp-microservice/issues"
   },
   "homepage": "https://github.com/VinVaz/Timestamp-microservice#readme",
+  "engines": {
+    "node": "8.9.4"
+  },
   "dependencies": {
     "moment": "^2.21.0"
   }
