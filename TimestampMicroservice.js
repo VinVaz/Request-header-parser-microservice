@@ -2,33 +2,29 @@ var http = require('http');
 var moment = require('moment');
 
 http.createServer(function(req, res){
-	
+	//escape unnecessary request
 	if(req.url != '/favicon.ico'){
 	
-	  res.writeHead(200, {'Content-Type': 'text/plain'});
-	  //decode the given url that represents a date 
+	  //decode the given url that show a date 
 	  var givenTime = decodeURI(req.url);
+	  givenTime = givenTime.slice(1);
 	  
-	  //changes the received date and covert to a moment format
-	  var myMomentOne = moment(givenTime, "MMMM D, YYYY");
-	  var myMomentTwo = moment.unix('1450137600');
-      var myMoment = {};
+	  var naturalTime = moment(givenTime, "MMMM D, YYYY");
+	  var unixTime = moment.unix(givenTime);
+      var momentTime = {};
 	  
-	  //check if the date is either a unix timestamp or 
-	  //a natural language form of date
-	  if(myMomentOne.isValid()) myMoment = myMomentOne.format(); 
-	  else if(myMomentTwo.isValid()) myMoment = myMomentTwo.format(); 
+	  //tests if the date is a unix timestamp or a natural language form of date
+	  if(naturalTime.isValid()) momentTime = naturalTime.format(); 
+	  else if(unixTime.isValid()) momentTime = unixTime; 
 	  else console.log("Err"); 
 	  
 	  var output = {
-		  unix: moment(myMoment).unix(),
-		  natural: moment(myMoment).format("MMMM D, YYYY")
+		  unix: moment(momentTime).unix(),
+		  natural: moment(momentTime).format("MMMM D, YYYY")
 	  }
-	  	  console.log(output);
-	  
-	  //res.write(myMoment);
+	  res.writeHead(200, {'Content-Type': 'text/plain'});
+	  res.write(JSON.stringify(output));
       res.end();
 	}
-	
 }).listen(8080);
 	
