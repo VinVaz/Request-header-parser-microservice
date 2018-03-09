@@ -8,7 +8,7 @@
 >
 >how to use it?
 >
->this program was created with education porpouse, as part of
+>this program was created for education purposes, as part of
 >the freecodecamp course, so feel free to contribute with the
 > documentation and the code, specially with the comments and
 > variable names 
