@@ -1,9 +1,9 @@
-###Timestamp Microservice
+### Timestamp Microservice
 ----------------------------------------
 >
 >The **Timestamp Microservice** is a full stack JavaScript 
->app that receives a string as a parameter and returns an 
->object containing both a Unix timestamp and the natural 
+>app that receives a date as a string parameter and returns 
+>an object containing both a Unix timestamp and the natural 
 >language date (exemple: january 1, 2016)
 >
 >how to use it?
