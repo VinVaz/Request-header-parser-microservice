@@ -1,6 +1,8 @@
 var http = require('http');
 var moment = require('moment');
 
+var port = process.env.PORT || 8080;
+
   http.createServer(function(req, res){
     //escape unnecessary response call
 	if(req.url != '/favicon.ico'){
@@ -29,9 +31,9 @@ var moment = require('moment');
 		  unix: moment(momentTime).unix(),
 		  natural: moment(momentTime).format("MMMM D, YYYY")
 	  }
-	  
+	  console.log(port);
 	  res.write(JSON.stringify(output));
       res.end();
 	}
-  }).listen(8080);
+  }).listen(port);
 	

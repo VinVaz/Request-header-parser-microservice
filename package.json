@@ -1,29 +1,31 @@
 {
-  "name": "timestamp-microservice",
+  "name": "Timestamp-microservice",
   "version": "1.0.0",
-  "description": "hello I'm readme",
-  "main": "TimestampMicroservice.js",
+  "description": "Testing",
+  "main": "timestampMicroservice.js",
+  "dependencies": {
+    "moment": "^2.21.0"
+  },
+  "engines": {
+    "node": "8.9.4"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node timestampMicroservice.js",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VinVaz/Timestamp-microservice.git"
   },
   "keywords": [
-    "\u001b[B\u001b[B[]\u001b"
-	"heroku"
+    "heroku",
+    "node"
   ],
   "author": "Vinícius Vaz",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/VinVaz/Timestamp-microservice/issues"
   },
-  "homepage": "https://github.com/VinVaz/Timestamp-microservice#readme",
-  "engines": {
-    "node": "8.9.4"
-  },
-  "dependencies": {
-    "moment": "^2.21.0"
-  }
+  "homepage": "https://github.com/VinVaz/Timestamp-microservice#readme"
 }
