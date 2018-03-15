@@ -2,6 +2,7 @@
   "name": "Timestamp-microservice",
   "version": "1.0.0",
   "description": "Testing",
+  "main": "timestampMicroservice.js",
   "dependencies": {
     "moment": "^2.21.0"
   },
