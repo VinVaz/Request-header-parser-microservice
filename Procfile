@@ -1,1 +1,1 @@
-web: node ./timestampMicroservice.js
+web: node timestampMicroservice.js
