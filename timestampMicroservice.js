@@ -1,5 +1,6 @@
 var http = require('http');
 var moment = require('moment');
+var port = process.env.PORT || 8080;
 
   http.createServer(function(req, res){
     //escape unnecessary response call
@@ -33,4 +34,4 @@ var moment = require('moment');
 	  res.write(JSON.stringify(output));
       res.end();
 	}
-  }).listen(8080);
+  }).listen(port);
