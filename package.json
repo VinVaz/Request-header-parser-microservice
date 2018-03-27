@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Testing",
   "main": "requestHeaderParser.js",
-  "dependencies": {
-    "moment": "^2.21.0"
-  },
+  "dependencies": {},
   "engines": {
     "node": "8.9.4"
   },
