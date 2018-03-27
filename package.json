@@ -1,8 +1,8 @@
 {
-  "name": "Timestamp-microservice",
+  "name": "Request-header-parser-microservice",
   "version": "1.0.0",
   "description": "Testing",
-  "main": "timestampMicroservice.js",
+  "main": "requestHeaderParser.js",
   "dependencies": {
     "moment": "^2.21.0"
   },
@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node timestampMicroservice.js",
+    "start": "node requestHeaderParser.js",
     "test": "node test.js"
   },
   "repository": {
