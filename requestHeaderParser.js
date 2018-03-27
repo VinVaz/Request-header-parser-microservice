@@ -10,8 +10,18 @@ var operatingSystem = "";
 
   http.createServer(function(req, res){
 	   
-	IP_adress = req.connection.remoteAddress;
-    operatingSystem = `${os.type()} ${os.release()}; ${os.platform()}; ${os.arch()}`;
+	IP_adress = req.headers['x-forwarded-for'] ||
+            	req.connection.remoteAddress || 
+				req.socket.remoteAddress || 
+				req.connection.socket.remoteAddress;
+    
+	language = req.headers["accept-language"];
+	language = language.split(";")[0];
+	language = language.split(",")[0];
+	
+	var agent = req.headers["user-agent"];
+	myRegex = /(?:[(])([^(]*)(?:[)])/;
+    operatingSystem = myRegex.exec(agent)[1];
 	   
 	var output = {
 		ipaddress: IP_adress,
